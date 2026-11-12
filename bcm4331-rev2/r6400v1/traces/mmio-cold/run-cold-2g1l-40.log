@@ -1,0 +1,19 @@
+Thu Nov 12 01:29:23 PM CET 2026
+rc rmmod=0
+rc wl=0
+rc trap=0
+rc ap=0
+rc bwcap=0
+Chanspec set to 0x1803
+rc ch=0
+rc up=0
+Setting SSID: "test-ap"
+rc ssid=0
+rc bss=0
+on: 1l (0x1803)
+radio down
+nas running: [7582]
+rc rmmod=0
+[ 1285.505620] wl_mmio_trap: unloaded (emulated 80733, dd 0, foreign 1425, drops 0)
+Thu Nov 12 01:30:05 PM CET 2026
+-rw-rw-r-- 1 egc egc 2260748 Nov 12 13:29 /home/egc/dev/r6400v1-wl-diag/mmio-20261112/cold-2g1l-40.bin

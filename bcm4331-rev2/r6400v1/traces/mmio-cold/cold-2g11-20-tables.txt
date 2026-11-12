@@ -1,0 +1,43 @@
+[up]
+  0x00  wr    20  rd   10  offs 0-41 (20)  16-bit  distinct 9
+  0x01  wr    20  rd    1  offs 0-41 (20)  16-bit  distinct 9
+  0x02  wr    18  rd    0  offs 8-41 (18)  16-bit  distinct 4
+  0x03  wr    18  rd    0  offs 8-41 (18)  16-bit  distinct 4
+  0x04  wr     0  rd   16  offs 16-83 (8)  16-bit  distinct 0
+  0x07  wr    67  rd   12  offs 16-367 (61)  16-bit  distinct 14
+  0x08  wr    39  rd    1  offs 0-47 (33)  16-bit  distinct 8
+  0x0d  wr    24  rd    4  offs 95-123 (7)  16-bit  distinct 2
+  0x12  wr   128  rd    0  offs 0-127 (128)  16-bit  distinct 83
+  0x1a  wr   832  rd    9  offs 0-703 (576)  32-bit  distinct 106
+  0x1b  wr   576  rd    3  offs 0-703 (448)  32-bit  distinct 83
+  0x1c  wr   576  rd    3  offs 0-703 (448)  32-bit  distinct 81
+  0x1f  wr    64  rd    0  offs 0-63 (64)  32-bit  distinct 56
+  0x20  wr    64  rd    0  offs 0-63 (64)  32-bit  distinct 64
+  0x21  wr    64  rd    0  offs 0-63 (64)  32-bit  distinct 56
+  0x22  wr    64  rd    0  offs 0-63 (64)  32-bit  distinct 64
+  0x23  wr    64  rd    0  offs 0-63 (64)  32-bit  distinct 56
+  0x24  wr    64  rd    0  offs 0-63 (64)  32-bit  distinct 64
+  0x25  wr   130  rd    0  offs 0-127 (128)  32-bit  distinct 2
+  0x26  wr   128  rd    0  offs 0-127 (128)  16-bit  distinct 1
+  0x27  wr    32  rd    0  offs 0-31 (32)  16-bit  distinct 8
+  0x28  wr    20  rd    1  offs 0-41 (20)  16-bit  distinct 9
+  0x29  wr    18  rd    0  offs 8-41 (18)  16-bit  distinct 4
+  0x2f  wr    22  rd    0  offs 0-21 (22)  32-bit  distinct 5
+[ssid]
+  0x00  wr    20  rd   10  offs 0-41 (20)  16-bit  distinct 9
+  0x01  wr    20  rd    1  offs 0-41 (20)  16-bit  distinct 9
+  0x02  wr    18  rd    2  offs 8-41 (18)  16-bit  distinct 4
+  0x03  wr    18  rd    2  offs 8-41 (18)  16-bit  distinct 4
+  0x04  wr     0  rd    8  offs 16-83 (8)  16-bit  distinct 0
+  0x07  wr   163  rd   33  offs 16-367 (61)  16-bit  distinct 16
+  0x08  wr    51  rd    9  offs 0-47 (36)  16-bit  distinct 9
+  0x0d  wr   758  rd  159  offs 0-147 (91)  16-bit  distinct 53
+  0x11  wr  4160  rd    0  offs 0-159 (160)  32-bit  distinct 18
+  0x1a  wr   512  rd   99  offs 0-319 (192)  32-bit  distinct 93
+  0x1b  wr   384  rd    9  offs 0-63 (64)  16-bit  distinct 51
+  0x1c  wr   384  rd    9  offs 0-63 (64)  16-bit  distinct 50
+  0x25  wr     4  rd    0  offs 58-59 (2)  32-bit  distinct 2
+  0x28  wr    20  rd    1  offs 0-41 (20)  16-bit  distinct 9
+  0x29  wr    18  rd    2  offs 8-41 (18)  16-bit  distinct 4
+[bss-up]
+  0x08  wr    16  rd    8  offs 2-14 (4)  16-bit  distinct 6

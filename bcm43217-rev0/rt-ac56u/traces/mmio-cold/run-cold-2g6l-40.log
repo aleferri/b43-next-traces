@@ -1,0 +1,19 @@
+Thu Nov 12 03:07:08 PM EET 2026
+rc rmmod=0
+rc wl=0
+rc trap=0
+rc ap=0
+rc bwcap=0
+Chanspec set to 0x1808
+rc ch=0
+rc up=0
+Setting SSID: "test-ap"
+rc ssid=0
+bss: 1
+on: 6l (0x1808)
+radio down
+nas running: []
+rc rmmod=0
+[  565.702577] wl_mmio_trap: unloaded (emulated 119791, dd 0, foreign 1127, drops 0)
+Thu Nov 12 03:07:49 PM EET 2026
+-rw-rw-r-- 1 tossu tossu 3354372 Nov 12 15:07 /home/tossu/re/rt-ac56u/mmio-43217-20261112/cold-2g6l-40.bin

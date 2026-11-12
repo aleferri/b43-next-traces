@@ -1,0 +1,112 @@
+Thu Nov 12 03:12:27 PM EET 2026
+rc rmmod=0
+rc wl=0
+rc bwcap=0
+Chanspec set to 0x1006
+rc warmup-up=0
+warm-up done
+rc trap=0
+Chanspec set to 0x1803
+rc ch-1l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 1l (0x1803)
+rc down=0
+Chanspec set to 0x1804
+rc ch-2l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 2l (0x1804)
+rc down=0
+Chanspec set to 0x1805
+rc ch-3l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 3l (0x1805)
+rc down=0
+Chanspec set to 0x1806
+rc ch-4l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 4l (0x1806)
+rc down=0
+Chanspec set to 0x1807
+rc ch-5l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 5l (0x1807)
+rc down=0
+Chanspec set to 0x1808
+rc ch-6l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 6l (0x1808)
+rc down=0
+Chanspec set to 0x1809
+rc ch-7l=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 7l (0x1809)
+rc down=0
+Chanspec set to 0x1903
+rc ch-5u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 5u (0x1903)
+rc down=0
+Chanspec set to 0x1904
+rc ch-6u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 6u (0x1904)
+rc down=0
+Chanspec set to 0x1905
+rc ch-7u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 7u (0x1905)
+rc down=0
+Chanspec set to 0x1906
+rc ch-8u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 8u (0x1906)
+rc down=0
+Chanspec set to 0x1907
+rc ch-9u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 9u (0x1907)
+rc down=0
+Chanspec set to 0x1908
+rc ch-10u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 10u (0x1908)
+rc down=0
+Chanspec set to 0x1909
+rc ch-11u=0
+rc up=0
+Setting SSID: "test-ap"
+bss: 1
+on: 11u (0x1909)
+rc down=0
+radio down
+nas running: []
+rc rmmod=0
+[ 1087.336054] wl_mmio_trap: unloaded (emulated 925280, dd 0, foreign 4783, drops 0)
+Thu Nov 12 03:16:31 PM EET 2026
+-rw-rw-r-- 1 tossu tossu 25909464 Nov 12 15:16 /home/tossu/re/rt-ac56u/mmio-43217-20261112/hot-2g-40.bin

@@ -1,0 +1,32 @@
+== up
+  table 0x00 ( 0):     20 writes 0x000-0x029       12 reads
+  table 0x01 ( 1):     20 writes 0x000-0x029        0 reads
+  table 0x02 ( 2):     10 writes 0x020-0x029        0 reads
+  table 0x03 ( 3):     10 writes 0x020-0x029        0 reads
+  table 0x04 ( 4):      8 writes 0x010-0x053        8 reads
+  table 0x07 ( 7):    178 writes 0x010-0x16f       56 reads
+  table 0x08 ( 8):     52 writes 0x000-0x01f       16 reads
+  table 0x09 ( 9):      6 writes 0x000-0x028        0 reads
+  table 0x0f (15):    474 writes 0x000-0x05f      278 reads
+  table 0x10 (16):    265 writes 0x000-0x10b        2 reads
+  table 0x11 (17):   2400 writes 0x000-0x09f        0 reads
+  table 0x1a (26):   4788 writes 0x000-0x23f       12 reads
+  table 0x1b (27):   4788 writes 0x000-0x23f       12 reads
+  table 0x1e (30):      1 writes 0x000-0x000        1 reads
+== ssid
+  table 0x00 ( 0):     20 writes 0x000-0x029       12 reads
+  table 0x01 ( 1):     20 writes 0x000-0x029        0 reads
+  table 0x02 ( 2):     10 writes 0x020-0x029        0 reads
+  table 0x03 ( 3):     10 writes 0x020-0x029        0 reads
+  table 0x07 ( 7):    170 writes 0x010-0x16f       59 reads
+  table 0x08 ( 8):     44 writes 0x000-0x01f       12 reads
+  table 0x09 ( 9):      6 writes 0x000-0x028        0 reads
+  table 0x0f (15):    539 writes 0x000-0x05f      428 reads
+  table 0x10 (16):      9 writes 0x002-0x10b        2 reads
+  table 0x11 (17):   4960 writes 0x000-0x09f        0 reads
+  table 0x1a (26):   5228 writes 0x000-0x23f       24 reads
+  table 0x1b (27):   5228 writes 0x000-0x23f       24 reads
+  table 0x1e (30):      1 writes 0x000-0x000        1 reads
+== bss-up
+  table 0x07 ( 7):      0 writes -                  8 reads
+  table 0x08 ( 8):      8 writes 0x00a-0x00e        4 reads

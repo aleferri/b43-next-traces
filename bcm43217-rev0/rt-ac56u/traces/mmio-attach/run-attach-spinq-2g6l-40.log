@@ -1,0 +1,27 @@
+Thu Nov 12 06:38:26 PM EET 2026
+rc rmmod=0
+[ 2349.644265] wl_mmio_trap: selftest passed: trapped, decoded, resumed
+trap polling
+rc wl=0
+rc trap=0
+[ 2349.644265] wl_mmio_trap: selftest passed: trapped, decoded, resumed
+[ 2353.900601] wl_mmio_trap: phys 08000000 is mapped at 88858000, 4/4 pages contiguous
+[ 2353.900633] wl_mmio_trap: window 0x08000000 at 88858000, 16384 bytes; trapping
+[ 2356.025122] wl_mmio_trap: trapping, emulated=481 dd=0 foreign=2064 not-ls=0 mismatch=0 cond=0 drops=0
+rc ap=0
+rc bwcap=0
+Chanspec set to 0x1808
+rc ch=0
+rc up=0
+[ 2366.109206] wl_mmio_trap: trapping, emulated=52981 dd=0 foreign=2662 not-ls=0 mismatch=0 cond=0 drops=0
+Setting SSID: "test-ap"
+rc ssid=0
+bss: 1
+on: 6l (0x1808)
+[ 2376.286610] wl_mmio_trap: trapping, emulated=120401 dd=0 foreign=2961 not-ls=0 mismatch=0 cond=0 drops=0
+radio down
+nas running: []
+rc rmmod=0
+[ 2386.544915] wl_mmio_trap: unloaded (emulated 120402, dd 0, foreign 3299, drops 0)
+Thu Nov 12 06:39:07 PM EET 2026
+-rw-rw-r-- 1 user user 3371536 Nov 12 18:38 ~/re/rt-ac56u/mmio-43217-attach-20261112/attach-spinq-2g6l-40.bin

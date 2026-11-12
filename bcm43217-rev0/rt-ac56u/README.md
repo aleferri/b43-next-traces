@@ -2,7 +2,7 @@
 
 The RT-AC56U has a BCM4708 with two radios on PCIe:
 
-- 2.4 GHz: a **BCM43217**, core rev 30, N-PHY rev 17, radio 2057 rev 14. It is DD-WRT `eth1`, PCIe 0001:01:00.0,
+- 2.4 GHz: a **BCM43217**, chip rev 0 (package 8, PCI 14e4:a8db), core rev 30, N-PHY rev 17, radio 2057 rev 14. It is DD-WRT `eth1`, PCIe 0001:01:00.0,
   BAR0 0x08000000; the BAR is 32 KiB and `wl` maps 16 KiB of it. Its sromrev 8 data comes from the CFE NVRAM
   (`0:` prefix, `nvram-0.txt` in `mmio-43217-cold.zip`, MAC address removed). It has an external PA
   (`extpagain2g=3`) and an external LNA (`elna2g=2`), with `boardflags=0x80001200` and `boardflags2=0x00001800`.
@@ -87,8 +87,51 @@ The `up`, `ssid` and `bss-up` columns count decoded ops (`*-ops.txt`), not raw a
       writes at `up` and 4960/9920 at `ssid`. That is the same 160/320 split as table 0x11 on the 4331;
     - table 0x07 gets two writes fewer at 40 MHz.
 
+## Attach (`traces/mmio-attach`)
+
+Two runs with the trap armed before `insmod wl`, then the cold bring-up on the same load: `attach-spinq-2g6-20`
+and `attach-spinq-2g6l-40`. `attach.sh` has the command lines.
+
+- **Trap.** `wl-mmio-trap/4-4-arm` with `poll_ms=0` (aleferri/b43-ac-wip#49), loaded in the background with
+  `autoarm=1 poll_ms=0 poll_secs=120`; then `mark attach`, `insmod wl`, `mark attach-done`. After that come the
+  cold run's steps: `ap 1`, `[bw_cap 2g 3]`, `chanspec`, `up` and 10 s, `ssid`, `bss-up` and 10 s of beaconing.
+- **Console.** The kernel console was muted (`kernel.printk` 1) while the trap waited. On a 115200 Bd console, the
+  trap's "is mapped at" line takes about 7 ms between finding the mapping and arming.
+- **Records.** `drops 0`, and records = emulated + marks (108276 + 9, 120402 + 10).
+
+| file | `attach` | `up` | `ssid` | `bss-up` |
+|---|---|---|---|---|
+| `attach-spinq-2g6-20` | 463 | 30883 | 42343 | 4462 |
+| `attach-spinq-2g6l-40` | 462 | 34831 | 50870 | 5493 |
+
+**What the attach section holds.** It starts at the PCIe core's MDIO (`PCIE` 0x128/0x12c), about 80 ms after
+`insmod wl` starts. The chip id read and the core scan before that are not in it: they go through another
+mapping, or through one that is gone before a scan of `init_mm` sees it.
+
+What follows, in order:
+- PMU resource waits (`res_pending`, `pmutimer`), `pmucontrol` = 0x381, and the OTP registers;
+- the d11 core reset through its wrapper;
+- the SHM test pattern (0x55aa/0xaa55 at object 0x10000);
+- the radio id read (0x2057);
+- PHY writes to 0x08f and 0x0a5-0x0a7, and a read-modify-write of 0x078;
+- the PCIe MDIO again.
+
+The two attach sections are the same sequence, apart from the number of polling reads.
+
+**Where the chip control and external PA setup is.** It is not in the attach. The traced attach touches neither
+ChipCommon `chipcontrol` (0x028, at ChipCommon's fixed BAR0 offset) nor the PMU chip control registers
+(0x650/0x654). PMU chip control register 1
+(the external PA bits 13 and 8) is read, written and read back at `up` and again at `ssid`, and those accesses are
+already in the cold runs. It reads 0x2100 and `wl` writes 0x2100 back: the bits were already set, because this
+board had already been brought up since its power-on. No trace has an access to ChipCommon `chipcontrol` (0x028), the register of bit 6 discussed
+in openwrt/openwrt#25922, at that offset. Core switches through the PCI config window are not MMIO, so the trap
+does not see them, but nothing is written at 0x028 through the core window either.
+
+The `up` after the attach does the same amount of work as the `up` of the cold runs (30883 against 31086 ops at
+20 MHz). The cold runs, which load the trap after `insmod wl`, therefore miss only the attach section.
+
 ## Not covered
 
-- The attach (`insmod wl`): the chip-control and external PA setup at probe is not in these traces.
-  `autoarm=1` would catch it.
+- The start of the attach: the chip id and the core scan (see above).
+- A power-on attach: the attach runs follow a module reload, with the board warm.
 - Traffic: no client was associated during any run.

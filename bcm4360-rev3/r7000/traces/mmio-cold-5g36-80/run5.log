@@ -1,0 +1,13 @@
+Fri Oct 30 08:30:57 CET 2026
+rc ap=0
+Chanspec set to 0xe02a
+rc chanspec=0
+rc up=0
+Setting SSID: "test-ap5"
+rc ssid=0
+rc bss=0
+1
+36/80 (0xe02a)
+Fri Oct 30 08:31:17 CET 2026
+[ 2415.000649] wl_mmio_trap: open, emulated=141979 dd=0 foreign=1422 not-ls=0 mismatch=0 cond=0 drops=0
+nas/wland now: 4597

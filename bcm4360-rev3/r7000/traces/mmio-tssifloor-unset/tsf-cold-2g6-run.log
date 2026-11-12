@@ -1,0 +1,25 @@
+Sun Nov  1 07:59:59 AM CET 2026
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+---
+rc trap=0
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+rc ap=0
+Chanspec set to 0x1006
+rc ch=0
+rc up=0
+Setting SSID: "test-ap"
+rc ssid=0
+rc bss=0
+radio down
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+[  265.053333] wl_mmio_trap: phys 08000000 is mapped at 8b158000, 4/8 pages contiguous
+[  265.262825] wl_mmio_trap: window 0x08000000 at 8b158000, 16384 bytes; autoarm=0: waiting for 'on'
+rc rmmod=0
+Sun Nov  1 08:00:50 AM CET 2026
+-rw-rw-r-- 1 egc egc 2850764 Nov  1 08:00 /home/egc/dev/r7000-wl-diag/tssifloor-20261101/tsf-cold-2g6.bin

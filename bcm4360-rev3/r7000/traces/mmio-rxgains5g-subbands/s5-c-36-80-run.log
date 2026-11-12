@@ -1,0 +1,23 @@
+Mon Nov  2 02:01:06 PM CET 2026
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+rc trap=0
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+rc ap=0
+Chanspec set to 0xe02a
+rc ch=0
+rc up=0
+Setting SSID: "test-ap5"
+rc ssid=0
+rc bss=0
+radio down
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+[  319.547123] wl_mmio_trap: window 0x40000000 at 88870000, 16384 bytes; autoarm=0: waiting for 'on'
+rc rmmod=0
+Mon Nov  2 02:01:53 PM CET 2026
+-rw-rw-r-- 1 egc egc 4083548 Nov  2 14:01 /home/egc/dev/r7000-wl-diag/flatstik-check-20261102/s5-c-36-80.bin

@@ -1,0 +1,16 @@
+Fri Oct 30 08:16:51 CET 2026
+rc ap=0
+Chanspec set to 0x1006
+rc chanspec=0
+rc up=0
+Setting SSID: "test-ap"
+rc ssid=0
+rc bss=0
+wlx: unknown command bss
+1
+6 (0x1006)
+Fri Oct 30 08:17:11 CET 2026
+[ 1521.912031] wl_mmio_trap: phys 08000000 is mapped at 8b158000, 4/8 pages contiguous
+[ 1522.128511] wl_mmio_trap: phys 08000000 is mapped at 8b158000, 4/8 pages contiguous
+[ 1522.341402] wl_mmio_trap: window 0x08000000 at 8b158000, 16384 bytes; autoarm=0: waiting for 'on'
+[ 1569.201285] wl_mmio_trap: open, emulated=52621 dd=0 foreign=602 not-ls=0 mismatch=0 cond=0 drops=0

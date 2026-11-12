@@ -1,0 +1,9 @@
+CMD: PATH=/tmp/wlbin:$PATH WL_KO=/lib/modules/4.4.302-rt232-st78/wl.ko KILL='nas wland' IF=eth1 SSID=test-ap TXBF=0 VHTMODE=0 ASSOC_WAIT=240 TRAFFIC=60 sh capture_txrx.sh eth1 test-ap 2g6/20
+Thu Oct 29 14:42:29 CET 2026
+wl txbf 0 refused: txbf: Not supported
+--- 2g6/20: waiting for a station
+>>> 2g6/20: traffic both ways now, 60 s
+done: split the trace on its MARK records.
+rc=0
+Thu Oct 29 14:43:40 CET 2026
+[ 2899.592809] wl_diag: unloaded (lost: 0, filtered: 0)

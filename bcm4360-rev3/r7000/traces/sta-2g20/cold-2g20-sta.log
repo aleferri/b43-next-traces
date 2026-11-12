@@ -1,0 +1,42 @@
+DD-WRT v3.0-r66097M Community Build (c) 2026 NewMedia-NET GmbH
+Release: 10/27/26
+Board: Netgear R7000
+CMD: PATH=/tmp/wlbin:$PATH WL_KO=/lib/modules/4.4.302-rt232-st78/wl.ko IF=eth1 DEVID=0x43a1 SSID=test-ap BR=br0 KILL="nas wland" sh capture_cold_init.sh 2g20
+Thu Oct 29 13:55:39 CET 2026
+capture_cold_init: eth1, BW20, attesa 10s + 10s bss, deviceid ammessi: 0x43a1
+modulo: /lib/modules/4.4.302-rt232-st78/wl.ko
+il rmmod di wl porta giu' anche il 2.4 GHz: non guidare questa procedura in wifi
+il lettore di /proc/wl_diag deve essere gia' attivo
+
+=================== 2g1/20 ===================
+
+=================== 2g2/20 ===================
+
+=================== 2g3/20 ===================
+
+=================== 2g4/20 ===================
+
+=================== 2g5/20 ===================
+
+=================== 2g6/20 ===================
+
+=================== 2g7/20 ===================
+
+=================== 2g8/20 ===================
+
+=================== 2g9/20 ===================
+
+=================== 2g10/20 ===================
+
+=================== 2g11/20 ===================
+
+=================== 2g12/20 ===================
+chanspec 2g12/20 rifiutato: /usr/sbin/wl: Bad Channel
+
+=================== 2g13/20 ===================
+chanspec 2g13/20 rifiutato: /usr/sbin/wl: Bad Channel
+
+fatto. Taglia la traccia con:
+  python3 split_trace.py --on mark <trace> split/ --bringup-only
+rc=0
+Thu Oct 29 14:00:46 CET 2026

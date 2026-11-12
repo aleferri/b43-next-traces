@@ -1,0 +1,111 @@
+--- a/wl-mmio-trap/4-4-arm/arm_syms.c
++++ b/wl-mmio-trap/4-4-arm/arm_syms.c
+@@ -3,10 +3,14 @@
+  * Resolve the kernel symbols the ARM trap needs.
+  *
+  * flush_tlb_kernel_range and fsr_info come by name through
+- * kallsyms_lookup_name, which ARM exports to modules from 2.6.33 on. init_mm
+- * is reached through the exported init_task, so it needs no lookup and no
+- * signature scan -- unlike the MIPS side, where init_mm had to be found by
+- * other means.
++ * kallsyms_lookup_name, which ARM exports to modules from 2.6.33 on.
++ *
++ * init_mm is neither exported nor, being data, in kallsyms without
++ * KALLSYMS_ALL. init_task.active_mm is not a way in: init_task is CPU 0's
++ * idle thread, which borrows the previous task's mm on every switch (lazy
++ * TLB), and a user pgd only carries the vmalloc/ioremap L1 entries that
++ * existed when it was made or that it has faulted in since. So it is looked
++ * up by name, or passed as init_mm_addr= from System.map.
+  *
+  * fsr_info is a static array (arch/arm/mm/fault.c), so its symbol is in
+  * kallsyms only with KALLSYMS_ALL. Most kernels are built without it, so the
+@@ -18,9 +22,16 @@
+ #include <linux/kallsyms.h>
+ #include <linux/sched.h>
+ #include <linux/mm.h>
++#include <linux/moduleparam.h>
+ 
+ #include "arm_syms.h"
+ 
++static ulong init_mm_addr;
++module_param(init_mm_addr, ulong, 0444);
++MODULE_PARM_DESC(init_mm_addr, "address of init_mm, for a kernel without KALLSYMS_ALL (from System.map)");
++
++static struct mm_struct *p_init_mm;
++
+ /* Mirror of struct fsr_info in arch/arm/mm/fault.c: the .fn pointer is the
+  * first member, so &fsr_info[7] is the address of its fn slot. */
+ struct as_fsr_info {
+@@ -49,8 +60,7 @@
+ 
+ struct mm_struct *as_init_mm(void)
+ {
+-	/* init_task.active_mm is &init_mm; init_task is exported. */
+-	return init_task.active_mm;
++	return p_init_mm;
+ }
+ 
+ void as_flush_tlb_kernel(unsigned long start, unsigned long end)
+@@ -78,6 +88,18 @@
+ 		return -ENOTSUPP;
+ 	}
+ 
++	a = init_mm_addr ? init_mm_addr : kallsyms_lookup_name("init_mm");
++	if (!a) {
++		pr_err("wl_mmio_trap: init_mm is not resolvable without KALLSYMS_ALL; pass init_mm_addr= from System.map\n");
++		return -ENOENT;
++	}
++	p_init_mm = (struct mm_struct *)a;
++	if (!virt_addr_valid(p_init_mm->pgd)) {
++		pr_err("wl_mmio_trap: init_mm at %p has pgd %p, not a lowmem address; wrong init_mm_addr?\n",
++		       p_init_mm, p_init_mm->pgd);
++		return -EINVAL;
++	}
++
+ 	a = kallsyms_lookup_name("flush_tlb_kernel_range");
+ 	if (!a) {
+ 		pr_err("wl_mmio_trap: flush_tlb_kernel_range not resolvable\n");
+--- a/wl-mmio-trap/4-4-arm/wl_mmio_trap_main.c
++++ b/wl-mmio-trap/4-4-arm/wl_mmio_trap_main.c
+@@ -548,6 +548,7 @@
+ 	volatile u32 *p;
+ 	phys_addr_t phys;
+ 	u32 *page, got;
++	struct page *test_pg;
+ 	int before;
+ 	bool ok = false;
+ 
+@@ -575,14 +576,17 @@
+ 		goto out;
+ 	}
+ 
+-	/* The alias must be uncached, like the real window, or the test
+-	 * measures the cache: ioremap() is device memory on ARM, so a read
+-	 * through it reaches memory and a write through it is not held in a
+-	 * line. Flush the page's cached (vmalloc) view before writing the
+-	 * pattern through the uncached alias, so the two agree. */
+-	t.alias = ioremap(phys, PAGE_SIZE);
++	/* ARM's ioremap() refuses RAM (pfn_valid), so the test page cannot get
++	 * the device-memory alias the real window does. A second vmap() of the
++	 * same page stands in: cacheable like the vmalloc view, and the
++	 * Cortex-A9 D-cache is PIPT, so the two views agree without aliasing.
++	 * The test still proves trap, decode, emulate and resume through an
++	 * alias; that the window's alias is uncached rests on ioremap() of the
++	 * BAR. */
++	test_pg = vmalloc_to_page(page);
++	t.alias = (void __iomem *)vmap(&test_pg, 1, VM_MAP, PAGE_KERNEL);
+ 	if (!t.alias) {
+-		pr_err("wl_mmio_trap: selftest: ioremap of the test alias failed\n");
++		pr_err("wl_mmio_trap: selftest: vmap of the test alias failed\n");
+ 		goto out;
+ 	}
+ 	flush_kernel_vmap_range(page, PAGE_SIZE);
+@@ -617,7 +621,7 @@
+ 		pr_info("wl_mmio_trap: selftest passed: trapped, decoded, resumed\n");
+ out:
+ 	if (t.alias)
+-		iounmap(t.alias);
++		vunmap((__force void *)t.alias);
+ 	mmio_pte_release(t.win);
+ 	vfree(page);
+ 	return ok;

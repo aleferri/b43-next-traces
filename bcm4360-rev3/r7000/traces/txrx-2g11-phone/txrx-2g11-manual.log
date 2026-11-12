@@ -1,0 +1,8 @@
+CMD: PATH=/tmp/wlbin:$PATH MANUAL=1 ASSOC_WAIT=180 TRAFFIC=90 sh capture_txrx.sh eth1 R7000-24 2g11/20 (Enter after: stopservice nas; stopservice wlconf; startservice wlconf; brctl addif br0 eth1; startservice nas)
+Thu Oct 29 14:52:12 CET 2026
+>>> apply 2g11/20 from the UI/CLI now; Enter when it is up
+--- 2g11/20: waiting for a station
+>>> 2g11/20: traffic both ways now, 90 s
+done: split the trace on its MARK records.
+rc=0
+Thu Oct 29 14:54:58 CET 2026

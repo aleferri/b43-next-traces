@@ -1,0 +1,15 @@
+CMD: PATH=/tmp/wlbin:$PATH WL_KO=/lib/modules/4.4.302-rt232-st78/wl.ko KILL='nas wland' IF=eth2 DEVID=0x43a2 SSID=test-ap5 BR=br1 sh capture_hot_init.sh 20 eth2 10 test-ap5
+Thu Oct 29 14:25:43 CET 2026
+--- 5g36/20
+--- 5g40/20
+--- 5g44/20
+--- 5g48/20
+--- 5g144/20
+--- 5g149/20
+--- 5g153/20
+--- 5g157/20
+--- 5g161/20
+--- 5g165/20
+fase 20 completata. Splitta la traccia sui record CHANSPEC.
+rc=0
+Thu Oct 29 14:29:15 CET 2026

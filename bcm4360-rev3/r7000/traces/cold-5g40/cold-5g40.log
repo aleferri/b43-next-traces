@@ -1,0 +1,19 @@
+CMD: PATH=/tmp/wlbin:$PATH WL_KO=/lib/modules/4.4.302-rt232-st78/wl.ko KILL='nas wland' IF=eth2 DEVID=0x43a2 SSID=test-ap5 BR=br1 sh capture_cold_init.sh 40
+Thu Oct 29 14:22:48 CET 2026
+capture_cold_init: eth2, BW40, attesa 10s + 10s bss, deviceid ammessi: 0x43a2
+modulo: /lib/modules/4.4.302-rt232-st78/wl.ko
+il rmmod di wl porta giu' anche il 2.4 GHz: non guidare questa procedura in wifi
+il lettore di /proc/wl_diag deve essere gia' attivo
+
+=================== 5g36/40 ===================
+
+=================== 5g44/40 ===================
+
+=================== 5g149/40 ===================
+
+=================== 5g157/40 ===================
+
+fatto. Taglia la traccia con:
+  python3 split_trace.py --on mark <trace> split/ --bringup-only
+rc=0
+Thu Oct 29 14:24:35 CET 2026

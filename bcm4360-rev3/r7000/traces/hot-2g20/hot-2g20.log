@@ -1,0 +1,18 @@
+CMD: PATH=/tmp/wlbin:$PATH WL_KO=/lib/modules/4.4.302-rt232-st78/wl.ko KILL='nas wland' IF=eth1 DEVID=0x43a1 SSID=test-ap BR=br0 sh capture_hot_init.sh 2g20 eth1 10 test-ap
+Thu Oct 29 14:13:58 CET 2026
+--- 2g1/20
+--- 2g2/20
+--- 2g3/20
+--- 2g4/20
+--- 2g5/20
+--- 2g6/20
+--- 2g7/20
+--- 2g8/20
+--- 2g9/20
+--- 2g10/20
+--- 2g11/20
+salto 2g12/20: /usr/sbin/wl: Bad Channel
+salto 2g13/20: /usr/sbin/wl: Bad Channel
+fase 2g20 completata. Splitta la traccia sui record CHANSPEC.
+rc=0
+Thu Oct 29 14:17:52 CET 2026

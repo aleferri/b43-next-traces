@@ -42,6 +42,12 @@ SPR n is MMIO 0x400 + 2n.
   - The trigger value (0x0040) never reads back, so every one of the 60 captures is untriggered (`trig 0`). The long frames are the captures where FRAMELEN goes past 0x300.
 - **`shm-upload.txt`** (`scripts/shmdump42.sh`): all 4096 words of shared memory, 8 s into a 40 Mbit/s UDP upload.
 - **`regs-idle.txt`** (`scripts/regdump42.sh`): SPR 0x000-0x1FF read from the host, 3 samples, AP up with no station.
+- **`pdtrace-rxe-matrix.txt`** (`scripts/rxm.sh`, `scripts/rxm-remote.sh`):
+  - Traffic: 1000-byte pings from the PC every 30 ms.
+  - One capture per receive-engine register, SPR 0x000-0x03F (MMIO 0x400-0x47E; data ports 0x422 and 0x432 skipped).
+  - Command: `1500 0x40000006 ADDR 0x0418`. RA is the register; RB is FRAMELEN, and sampling starts when FRAMELEN reaches 6 (the mark).
+  - Of up to five tries per register, the capture with the longest frame is kept (53 of 62 have one over 0x300 bytes). `addr ADDR MAX` heads each capture.
+  - `scripts/rxmshow.py` prints each register's changes against FRAMELEN.
 - **`scripts/pdmshow.py`, `scripts/pdlshow.py`**: print the value changes of each capture against FRAMELEN.
 
 MAC addresses are redacted as `xxxx`:

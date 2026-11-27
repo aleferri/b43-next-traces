@@ -1,0 +1,31 @@
+36    syn=be 16 10 1f 08 08 3f 06 02 0c 00 0c 00 rxtx=0c 00 00 0f 4f a3 00 fc cores_eq=True bw=081c 0818 0814 01f9 01fa 01fb
+64    syn=ed 16 10 1f 08 08 3f 14 02 0b 00 0b 00 rxtx=0b 00 00 0f 4c 83 00 a8 cores_eq=True bw=0854 0850 084c 01ec 01ed 01ee
+100   syn=29 17 10 1f 08 08 3f 26 02 09 00 09 00 rxtx=09 00 00 0a 46 43 00 75 cores_eq=True bw=089c 0898 0894 01dc 01dd 01dd
+149   syn=7b 17 20 1f 08 08 3f 7d 04 06 00 06 00 rxtx=06 00 00 08 42 13 00 21 cores_eq=True bw=08fe 08fa 08f6 01c8 01c8 01c9
+165   syn=95 17 20 1f 08 08 3f 8d 04 05 00 05 00 rxtx=05 00 00 06 41 03 00 00 cores_eq=True bw=091e 091a 0916 01c1 01c2 01c3
+38L   syn=c2 16 10 1f 08 08 3f 07 02 0c 00 0c 00 rxtx=0c 00 00 0f 4f a3 00 fb cores_eq=True bw=0820 081c 0818 01f8 01f9 01fa
+38U   syn=c2 16 10 1f 08 08 3f 07 02 0c 00 0c 00 rxtx=0c 00 00 0f 4f a3 00 fb cores_eq=True bw=0820 081c 0818 01f8 01f9 01fa
+46L   syn=cf 16 10 1f 08 08 3f 0b 02 0c 00 0c 00 rxtx=0c 00 00 0f 4f 93 00 da cores_eq=True bw=0830 082c 0828 01f4 01f5 01f6
+46U   syn=cf 16 10 1f 08 08 3f 0b 02 0c 00 0c 00 rxtx=0c 00 00 0f 4f 93 00 da cores_eq=True bw=0830 082c 0828 01f4 01f5 01f6
+54L   syn=dc 16 10 1f 08 08 3f 0f 02 0b 00 0b 00 rxtx=0b 00 00 0f 4f 93 00 b9 cores_eq=True bw=0840 083c 0838 01f0 01f1 01f2
+54U   syn=dc 16 10 1f 08 08 3f 0f 02 0b 00 0b 00 rxtx=0b 00 00 0f 4f 93 00 b9 cores_eq=True bw=0840 083c 0838 01f0 01f1 01f2
+62L   syn=ea 16 10 1f 08 08 3f 13 02 0b 00 0b 00 rxtx=0b 00 00 0f 4c 83 00 a8 cores_eq=True bw=0850 084c 0848 01ed 01ee 01ef
+62U   syn=ea 16 10 1f 08 08 3f 13 02 0b 00 0b 00 rxtx=0b 00 00 0f 4c 83 00 a8 cores_eq=True bw=0850 084c 0848 01ed 01ee 01ef
+102L  syn=2c 17 10 1f 08 08 3f 27 02 09 00 09 00 rxtx=09 00 00 0a 46 43 00 75 cores_eq=True bw=08a0 089c 0898 01db 01dc 01dd
+102U  syn=2c 17 10 1f 08 08 3f 27 02 09 00 09 00 rxtx=09 00 00 0a 46 43 00 75 cores_eq=True bw=08a0 089c 0898 01db 01dc 01dd
+110L  syn=3a 17 10 1f 08 08 3f 2b 02 08 00 08 00 rxtx=08 00 00 0a 46 43 00 75 cores_eq=True bw=08b0 08ac 08a8 01d7 01d8 01d9
+110U  syn=3a 17 10 1f 08 08 3f 2b 02 08 00 08 00 rxtx=08 00 00 0a 46 43 00 75 cores_eq=True bw=08b0 08ac 08a8 01d7 01d8 01d9
+118L  syn=47 17 10 1f 08 08 3f 2f 02 08 00 08 00 rxtx=08 00 00 0a 46 43 00 54 cores_eq=True bw=08c0 08bc 08b8 01d4 01d5 01d6
+118U  syn=47 17 10 1f 08 08 3f 2f 02 08 00 08 00 rxtx=08 00 00 0a 46 43 00 54 cores_eq=True bw=08c0 08bc 08b8 01d4 01d5 01d6
+126L  syn=54 17 10 1f 08 08 3f 33 02 07 00 07 00 rxtx=07 00 00 09 44 23 00 43 cores_eq=True bw=08d0 08cc 08c8 01d1 01d2 01d2
+126U  syn=54 17 10 1f 08 08 3f 33 02 07 00 07 00 rxtx=07 00 00 09 44 23 00 43 cores_eq=True bw=08d0 08cc 08c8 01d1 01d2 01d2
+134L  syn=62 17 10 1f 08 08 3f 37 02 07 00 07 00 rxtx=07 00 00 09 43 23 00 43 cores_eq=True bw=08e0 08dc 08d8 01ce 01ce 01cf
+134U  syn=62 17 10 1f 08 08 3f 37 02 07 00 07 00 rxtx=07 00 00 09 43 23 00 43 cores_eq=True bw=08e0 08dc 08d8 01ce 01ce 01cf
+142L no channel setup
+142U no channel setup
+151L  syn=7e 17 20 1f 08 08 3f 7f 04 06 00 06 00 rxtx=06 00 00 08 42 13 00 11 cores_eq=True bw=0902 08fe 08fa 01c7 01c8 01c8
+151U  syn=7e 17 20 1f 08 08 3f 7f 04 06 00 06 00 rxtx=06 00 00 08 42 13 00 11 cores_eq=True bw=0902 08fe 08fa 01c7 01c8 01c8
+159L  syn=8b 17 20 1f 08 08 3f 87 04 05 00 05 00 rxtx=05 00 00 08 42 13 00 00 cores_eq=True bw=0912 090e 090a 01c4 01c4 01c5
+159U  syn=8b 17 20 1f 08 08 3f 87 04 05 00 05 00 rxtx=05 00 00 08 42 13 00 00 cores_eq=True bw=0912 090e 090a 01c4 01c4 01c5
+36b   syn=be 16 10 1f 08 08 3f 06 02 0c 00 0c 00 rxtx=0c 00 00 0f 4f a3 00 fc cores_eq=True bw=081c 0818 0814 01f9 01fa 01fb
+2g3L no channel setup
